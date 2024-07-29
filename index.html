@@ -1,0 +1,41 @@
+<!-- angular:
+- AngularJS (v1.x) 
+- Angular (v2.x) -->
+
+<!DOCTYPE html>
+<!-- ng-app: Đánh dấu đây là ứng dụng angular -->
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- src angular search gg -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>\
+    <script src="js/index.js"></script>
+</head>
+<!-- ng-controller: chỉ định controller -->
+<body ng-controller="MainController">
+    <h1>GET</h1>
+    <ul>
+        <!-- ng-repeat: lặp qua danh sách sinh viên -->
+        <li ng-repeat="student in students">
+            {{ student.ten }} - {{ student.tuoi }}
+        </li>
+    </ul>
+
+
+    <h2>POST</h2>
+    <form>
+        <input type="number" name="id" id="" ng-model="student.id">
+        <input type="number" name="maSv" id="" ng-model="student.maSv">
+        <input type="text" name="ten" id="" ng-model="student.ten">
+        <input type="number" name="tuoi" id="" ng-model="student.tuoi">
+        <button type="button" ng-click="submitData()">POST</button>
+        <button type="button" ng-click="updateData()">PUT</button>
+        <button type="button" ng-click="deleteData(student.id)">DELETE</button>
+    </form>
+
+
+</body>
+</html>
+
